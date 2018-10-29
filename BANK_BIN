@@ -1,0 +1,150 @@
+.LC0:
+        .string "BANK BIN"
+.LC1:
+        .string "BANK BIN2"
+.LC2:
+        .string "GENE BIN3"
+.LC3:
+        .string "GENE BIN4"
+.LC4:
+        .string "FIND BIN5"
+.LC5:
+        .string "FIND BIN6"
+.LC6:
+        .string "MIXE ALL"
+main:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     esi, OFFSET FLAT:.LC0
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        lea     rax, [rbp-8]
+        mov     rsi, rax
+        mov     edi, OFFSET FLAT:_ZSt3cin
+        call    std::basic_istream<char, std::char_traits<char> >::operator>>(int&)
+        mov     eax, DWORD PTR [rbp-8]
+        cmp     eax, 12
+        ja      .L2
+        mov     eax, eax
+        mov     rax, QWORD PTR .L4[0+rax*8]
+        jmp     rax
+.L4:
+        .quad   .L2
+        .quad   .L7
+        .quad   .L7
+        .quad   .L7
+        .quad   .L6
+        .quad   .L6
+        .quad   .L6
+        .quad   .L5
+        .quad   .L5
+        .quad   .L5
+        .quad   .L3
+        .quad   .L3
+        .quad   .L3
+.L7:
+        mov     DWORD PTR [rbp-4], 1
+        jmp     .L8
+.L6:
+        mov     DWORD PTR [rbp-4], 2
+        jmp     .L8
+.L5:
+        mov     DWORD PTR [rbp-4], 3
+        jmp     .L8
+.L3:
+        mov     DWORD PTR [rbp-4], 4
+        jmp     .L8
+.L2:
+        mov     esi, OFFSET FLAT:.LC1
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        mov     esi, OFFSET FLAT:_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+        mov     rdi, rax
+        call    std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))
+.L8:
+        mov     eax, DWORD PTR [rbp-4]
+        cmp     eax, 2
+        je      .L9
+        cmp     eax, 2
+        jg      .L10
+        cmp     eax, 1
+        je      .L11
+        jmp     .L12
+.L10:
+        cmp     eax, 3
+        je      .L13
+        cmp     eax, 4
+        je      .L14
+        jmp     .L12
+.L11:
+        mov     esi, OFFSET FLAT:.LC2
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        mov     esi, OFFSET FLAT:_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+        mov     rdi, rax
+        call    std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))
+        jmp     .L15
+.L9:
+        mov     esi, OFFSET FLAT:.LC3
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        mov     esi, OFFSET FLAT:_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+        mov     rdi, rax
+        call    std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))
+        jmp     .L15
+.L13:
+        mov     esi, OFFSET FLAT:.LC4
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        mov     esi, OFFSET FLAT:_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+        mov     rdi, rax
+        call    std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))
+        jmp     .L15
+.L14:
+        mov     esi, OFFSET FLAT:.LC5
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        mov     esi, OFFSET FLAT:_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+        mov     rdi, rax
+        call    std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))
+        jmp     .L15
+.L12:
+        mov     esi, OFFSET FLAT:.LC6
+        mov     edi, OFFSET FLAT:_ZSt4cout
+        call    std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+        mov     esi, OFFSET FLAT:_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+        mov     rdi, rax
+        call    std::basic_ostream<char, std::char_traits<char> >::operator<<(std::basic_ostream<char, std::char_traits<char> >& (*)(std::basic_ostream<char, std::char_traits<char> >&))
+.L15:
+        mov     eax, 0
+        leave
+        ret
+__static_initialization_and_destruction_0(int, int):
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     DWORD PTR [rbp-4], edi
+        mov     DWORD PTR [rbp-8], esi
+        cmp     DWORD PTR [rbp-4], 1
+        jne     .L19
+        cmp     DWORD PTR [rbp-8], 65535
+        jne     .L19
+        mov     edi, OFFSET FLAT:_ZStL8__ioinit
+        call    std::ios_base::Init::Init() [complete object constructor]
+        mov     edx, OFFSET FLAT:__dso_handle
+        mov     esi, OFFSET FLAT:_ZStL8__ioinit
+        mov     edi, OFFSET FLAT:_ZNSt8ios_base4InitD1Ev
+        call    __cxa_atexit
+.L19:
+        nop
+        leave
+        ret
+_GLOBAL__sub_I_main:
+        push    rbp
+        mov     rbp, rsp
+        mov     esi, 65535
+        mov     edi, 1
+        call    __static_initialization_and_destruction_0(int, int)
+        pop     rbp
+        ret
